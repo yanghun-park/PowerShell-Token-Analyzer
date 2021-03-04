@@ -13,8 +13,8 @@
 ### Recommand System
 - Windows7 or later
 - Python 3.7 or later
-<br/>
-Before start, The module installation below is required. 
+
+Before start, The module installation below is required. <br/>
 - Revoke-Obfuscation : https://github.com/danielbohannon/Revoke-Obfuscation
 - PSDecode : https://github.com/R3MRUM/PSDecode
 <br/>
