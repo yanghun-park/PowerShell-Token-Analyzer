@@ -8,8 +8,8 @@ This program is designed to write a paper on power shell analysis.
 * Link to thesis : http://kips.or.kr/bbs/confn/article/1490
 
 * The latest version : 1.9.15 (2020/09/23 updated)
-@ This program language is korean. 
-@ Soon, it will be working in english
+  ! This program language is korean. 
+  ! Soon, it will be working in english
 
 
 Recommand System
@@ -32,7 +32,7 @@ Start!
 Tools
 - Split_CSV.py : CSV splited program
 - Merge_CSV.py : CSV merged program
-* Insert and run CSV file in CSV_Folder
+@ Insert and run CSV file in CSV_Folder
 
 
 Thanks!
