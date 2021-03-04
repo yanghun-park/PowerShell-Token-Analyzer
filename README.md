@@ -17,7 +17,6 @@
 Before start, The module installation below is required. <br/>
 - Revoke-Obfuscation : https://github.com/danielbohannon/Revoke-Obfuscation
 - PSDecode : https://github.com/R3MRUM/PSDecode
-<br/>
 
 ### Start!
 1. Open the editor and open file "Token_Analysis.py"
