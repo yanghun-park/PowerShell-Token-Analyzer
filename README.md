@@ -7,18 +7,18 @@
 
 ** The latest version : 1.9.15 (2020/09/23 updated) ** <br/>
   ! This program language is korean. <br/>
-  ! Soon, it will be working in english
+  ! Soon, it will be working in english <br/>
 
 
 ### Recommand System
 - Windows7 or later
 - Python 3.7 or later
-
+<br/>
 
 Before start, The module installation below is required. 
 - Revoke-Obfuscation : https://github.com/danielbohannon/Revoke-Obfuscation
 - PSDecode : https://github.com/R3MRUM/PSDecode
-
+<br/>
 
 ### Start!
 1. Open the editor and open file "Token_Analysis.py"
@@ -27,7 +27,7 @@ Before start, The module installation below is required.
 3. Enter the number of files to partition
 4. Please wait
 5. Verify the generated csv file
-
+<br/>
 
 ### Tools
 - Split_CSV.py : CSV splited program
