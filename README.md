@@ -27,7 +27,6 @@ Before start, The module installation below is required.
 3. Enter the number of files to partition
 4. Please wait
 5. Verify the generated csv file
-<br/>
 
 ### Tools
 - Split_CSV.py : CSV splited program
