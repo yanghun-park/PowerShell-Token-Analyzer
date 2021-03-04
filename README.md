@@ -23,10 +23,13 @@ Before start, The module installation below is required.
 
 
 Start!
-1. python Token_Analysis.py
-2. Enter the number of files to partition
-3. Please wait
-4. Verify the generated csv file
+Start!
+1. Open the editor and open file "Token_Analysis.py"
+2. Change the parameter value in the main( ) function.
+2. python Token_Analysis.py
+3. Enter the number of files to partition
+4. Please wait
+5. Verify the generated csv file
 
 
 Tools
