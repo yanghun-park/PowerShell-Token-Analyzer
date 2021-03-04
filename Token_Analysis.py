@@ -12,6 +12,7 @@ from PSTokenize import PSTokenize # PSParser를 사용한 토큰추출
 # 1. Seq_Process(Type, Num) - 시퀀스 번호 부여(타입, 시퀀스 시작값, 토큰값) / 반환값(INT) : 시퀀스번호
 # 2. main() - 메인함수
 # ==============================
+# TEST
 
 def Seq_Process(Type, Num, Token): # 시퀀스 번호 부여(타입, 시퀀스 시작값, 토큰값)
     #global Command_Dict, Argument_Dict, Parameter_Dict, Keyword_Dict, Variable_Dict

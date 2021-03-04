@@ -1,4 +1,5 @@
 # PowerShell-Token-Analysis-Program
+<<<<<<< HEAD
 ## This program is designed to write a paper on powershell analysis.
 - PSParser based Powershell token analysis program
 
