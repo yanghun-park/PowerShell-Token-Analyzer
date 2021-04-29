@@ -1,21 +1,22 @@
 import os, sys
 
-# SynDict : 구문사전 모듈
+# SynDict : SynDict : Syntax Dictionary Module
 # -----------------------------------------------------------------------------------------------
-# 1. Dict_Check(File) - 구문사전 확인(파일명)
-# 2. Dict_Update(File, Dict) - 구문사전 업데이트(파일명, 사전배열)
-# 3. Dict_Keyword(File) - Keyword 토큰사전 업데이트(파일명)
+# 1. Dict_Check (File) - Syntax Precheck (file name)
+# 2. Dict_Update (File, Dict) - Syntax dictionary update (file name, dictionary array)
+# 3. Dict_Keyword (File) - Keyword token dictionary update (file name)
+# Translation : 2021/04/29
 # -----------------------------------------------------------------------------------------------
 
-def Dict_Check(File): # 구문사전 확인(파일명)
-    print("파일 확인 : " + File)
+def Dict_Check(File): # Syntax pre-check (file name)
+    print("File Check : " + File)
     Dict_out = []
 
     try:
         Dict_F = open("Dict\\" + File, 'r')
         Dict = Dict_F.readlines()
         for word in Dict:
-            word = word.rstrip() #문장끝의 \n 제거
+            word = word.rstrip() # Remove \n at the end of the sentence
             Dict_out.append(word)
             Dict_F.close()
             
@@ -23,14 +24,14 @@ def Dict_Check(File): # 구문사전 확인(파일명)
         if File == "Keyword_Dict.txt":
             Dict_Keyword(File)
         else:
-            print("- " + File + " 파일을 찾을 수 없어 새로 생성합니다.  ")
+            print("- " + File + " File not found, creating a new one.")
             Dict_F = open("Dict\\" + File, 'w')
             Dict_F.close()
         
     return Dict_out
 
 
-def Dict_Update(File, Dict):  # 구문사전 업데이트(파일명, 사전배열)
+def Dict_Update(File, Dict):  # Syntax dictionary update (file name, dictionary array)
     Dict_F = open("Dict\\" + File, 'w')
 
     for word in Dict:
@@ -40,7 +41,7 @@ def Dict_Update(File, Dict):  # 구문사전 업데이트(파일명, 사전배�
     return
 
 
-def Dict_Keyword(File):  # Keyword 토큰사전 업데이트(파일명)
+def Dict_Keyword(File):  # Keyword token dictionary update
     Keyword_Data = [
         "keyword", 
         "for", 

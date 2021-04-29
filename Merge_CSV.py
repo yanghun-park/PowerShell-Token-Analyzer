@@ -1,48 +1,49 @@
 import csv, os, datetime
 
-# ===== CSV 병합 프로그램 =====
-# 디렉토리내 모든 CSV파일을 하나로 병합
-# 최종수정 : 2020/09/16 (Version 1.0.0)
+# ===== CSV Merger Program =====
+# Merge all CSV files in the directory into one
+# Final Amendment: 2020/09/16 (Version 1.0.0)
+# Translation: 2021/04/29
 # =========================
 
 def main():
-    FileName = "merged_normal.csv" # 출력할 파일
-    TaskDir = "CSV_Files" # 작업폴더
+    FileName = "merged_normal.csv" # Files to Output
+    TaskDir = "CSV_Files" # Tasks folder
     TaskPath = TaskDir + "\\"
     TaskList = os.listdir(TaskDir)
     
-    print("---------- CSV 병합 도구 ----------")
-    print("* 주의 : 기존에 생성된 파일을 초기화 합니다. ")
-    print("* 파일명 : " + FileName)
+    print("---------- CSV Merge Tools ----------")
+    print("* Caution: Initialize the existing generated file.")
+    print("* File Name : " + FileName)
     print("--------------------------------------")
     first_time = datetime.datetime.now()
 
     CSV_Output = open(FileName, "w")
-    CSV_OUT = [] # 병합 CSV 딕셔너리 생성
+    CSV_OUT = [] # Create a Merge CSV Dictionary
     FileCount = 0
     FileMax = len(TaskList)
 
     for Name in TaskList:
         FileCount = FileCount + 1
         PATH = TaskPath + Name
-        print("* 병합중... - " + Name + " (" + str(FileCount) + "/" + str(FileMax) + ")")
+        print("* Merging... - " + Name + " (" + str(FileCount) + "/" + str(FileMax) + ")")
         
-        CSV_F = open(PATH, 'r') # CSV 파일 읽기
+        CSV_F = open(PATH, 'r') # CSV File Read
         CSV_Temp = CSV_F.readlines()
         for Line in CSV_Temp:
-            Line = Line.rstrip() # 문장끝의 \n 제거
+            Line = Line.rstrip() # Remove \n at the end of the sentence
             CSV_OUT.append(Line)
 
 
-    print("* 최종파일 생성중...")
+    print("* Generating final file...")
     for Line in CSV_OUT:
         CSV_Output.write(Line + '\n')
 
     CSV_Output.close()
     last_time = datetime.datetime.now()
     print("----------------------------")
-    print("# 작업이 완료되었습니다. ")
-    print("# 경과 시간 : " + str(last_time - first_time))
+    print("# Finish!")
+    print("# Elapsed Time : " + str(last_time - first_time))
     print("----------------------------")
     return 0
 

@@ -1,45 +1,45 @@
 import subprocess, locale
 
-# PSTokenize : PSParser를 사용한 PowerShell 토큰추출 모듈
+# PSTokenize: PowerShell Token Extraction Module with PSParser
 # -----------------------------------------------------------------------------------------------
-# 1. PSTokenize(File) - PowerShell 토큰추출(파일, 검색토큰[]) - 반환값(String[]) : 임시사전
+# 1. PSTokenize (File) - PowerShell Token Extraction (File, Search Token[]) - Return Value (String[]): Temporary Dictionary
+# Translation : 2021/04/29
 # -----------------------------------------------------------------------------------------------
 
 def PSTokenize(File, Search):
-    #command = "'powershell.exe $Tokens = [System.Management.Automation.PSParser]::Tokenize((Get-Content \'%s\'), [ref]$null); \echo $Tokens'%path"
     ps = subprocess.Popen('powershell.exe $Tokens = [System.Management.Automation.PSParser]::Tokenize((Get-Content \'%s\'), [ref]$null); \
             echo $Tokens'%File, stdout = subprocess.PIPE).stdout
 
-    # 결과 내용을 시스템에 맞게 디코드
-    lang = locale.getdefaultlocale() # 운영체제 언어 불러오기
+    # Decode the results to fit the system
+    lang = locale.getdefaultlocale() # Get OS Language
     try:
         Data = ps.read().strip().decode(lang[1])
-    except UnicodeDecodeError:  # 유니코드 오류시
+    except UnicodeDecodeError:  # If Unicode Error
         try:
             Data = ps.read().strip().decode('UTF-8')
         except:
-            return 0  # 그래도 오류가 발생할경우 0 반환
+            return 0  # Returns 0 if an error still occurs
 
-    Word = Data.split('\n') # 데이터를 줄 단위로 나눔
+    Word = Data.split('\n') # Divide data by lines
 
-    Tmp = "" # 이전 줄을 기억하는 임시변수
-    Output_Dict = [] # 결과값을 저장하는 임시사전
+    Tmp = "" # Temporary variable remembering previous line
+    Output_Dict = [] # A temporary dictionary that stores the result values
 
     for N in range(0, len(Word)):
         try:
-            Word[N] = Word[N].rstrip() # 문자열 리턴코드 제거(공백문자 제거)
+            Word[N] = Word[N].rstrip() # Remove String Return Code (Remove Blank Characters)
         except:
             pass
 
         for S_Token in Search:
-            # 디버그 코드(print문)
+            # Debug Code
             #print("----------------------")
             #print("[", N, "]  LAST : ", Tmp) #COMMAND
             #print("[", N, "]  Type : ", S_Token)
             #print("[", N, "]  Word : ", Word[N])
             #print(Word[N][14:])
             if (Word[N][14:] == S_Token):
-                Process_Word = Tmp[14:] # 앞에 Content : 제거
+                Process_Word = Tmp[14:] # Remove "Content : " before
                 Output_Dict.append(S_Token + "===" + Process_Word)
 
         Tmp = Word[N]
