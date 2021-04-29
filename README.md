@@ -6,8 +6,7 @@
 * Link to thesis : http://kips.or.kr/bbs/confn/article/1490 <br/>
 
 ** The latest version : 1.9.15 (2020/09/23 updated) ** <br/>
-  @ This program language is korean. <br/>
-  @ Soon, it will be working in english <br/>
+** Translation into English : 2021/04/29 <br/>
 
 
 ### Recommand System
